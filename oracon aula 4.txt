@@ -1,0 +1,19 @@
+Create table Departamentos (
+Cod_Depto varchar (3) primary key not null,
+Nome_depto varchar (10),
+Obs varchar (30),
+Ramal number (4)
+);
+
+Create table Funcionarios (
+Cod_Func number (6) primary key not null,
+Cod_Depto varchar (3),
+Nome_Func varchar (30),
+CPF varchar (14),
+RG varchar (13),
+CONSTRAINT Cod_Depto_FK FOREIGN KEY (Cod_Depto) REFERENCES Departamentos (Cod_Depto)
+);
+
+// se tiver erro>>>para apagar a tebela 
+// DROP TABLE FUNCIONARIOS CASCADE CONSTRAINT;
+// DROP TABLE DEPARTAMENTOS CASCADE CONSTRAINT;
